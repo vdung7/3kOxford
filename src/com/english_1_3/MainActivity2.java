@@ -1,17 +1,10 @@
 package com.english_1_3;
 
 import java.util.ArrayList;
-import java.util.regex.Pattern;
-
-import com.english_1_3.R;
 
 import adapter.Learn_Adapter;
 import adapter.Reguler_Adapter;
 import adapter.Search_Adapter;
-import android.os.Build;
-import android.os.Bundle;
-import android.os.PatternMatcher;
-import android.provider.Settings;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlarmManager;
@@ -23,28 +16,30 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.os.Bundle;
+import android.provider.Settings;
+import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.widget.DrawerLayout;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
-import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
-import android.support.v4.app.ActionBarDrawerToggle;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.text.Editable;
-import android.text.TextWatcher;
+
+import com.searchboxsdk.android.StartAppSearch;
+import com.startapp.android.publish.StartAppAd;
 
 //Class chính hiện trên màn hình
 public class MainActivity2 extends Activity {
@@ -57,13 +52,13 @@ public class MainActivity2 extends Activity {
 
 	public static ListView listView;
 	public static TestAdapter testAdapter;
-	
+
 	public static ArrayList<Wordp> plist=new ArrayList<Wordp>();
 	public static ArrayList<Wordp> pi=new ArrayList<Wordp>();
 	public static ArrayList<Wordp> po=new ArrayList<Wordp>();
 	public static ArrayList<Wordp> pl=new ArrayList<Wordp>();
 	public static ArrayList<Regular> pr=new ArrayList<Regular>();
-	
+
 	private DrawerLayout mDrawerLayout;
 	private static int currentview=LIST3000;
 	private ListView mDrawerList;
@@ -76,10 +71,18 @@ public class MainActivity2 extends Activity {
 	private AlarmManager am;
 	private Button btstar,btstop;
 	private Button btHelp1,btHelpAlarm1;
+
+	// for advertisements
+	private StartAppAd startAppAd = new StartAppAd(this);
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
+		// use for advertisements
+		StartAppSearch.init(this);
+
 		//Opend database
 		testAdapter =new TestAdapter(this);
 		testAdapter.createDatabase();
@@ -138,6 +141,10 @@ public class MainActivity2 extends Activity {
 	@Override
 	protected void onResume() {
 		super.onResume();
+
+		// for advertisements
+		startAppAd.onResume();
+
 		int c = getCurrentView();
 		switch (c) {
 		case LIST3000:{
@@ -234,7 +241,7 @@ public class MainActivity2 extends Activity {
 
 
 	}
-	
+
 	//set Current
 	public void setCurrentView(int i){
 		this.currentview = i;
@@ -249,7 +256,7 @@ public class MainActivity2 extends Activity {
 		//get Text from Edittext Search
 		plist=testAdapter.getTestData();
 		listView.setAdapter(new Search_Adapter(this,R.layout.row_search,plist));
-	
+
 		return;
 	}
 
@@ -270,7 +277,7 @@ public class MainActivity2 extends Activity {
 		Acb_Search();
 		pl=testAdapter.getTestData();
 		listView.setAdapter(new Learn_Adapter(this,R.layout.row_learn,pl));
-	
+
 		return;
 	}
 
@@ -299,7 +306,7 @@ public class MainActivity2 extends Activity {
 
 	private void Acb_Search() {
 		getActionBar().setCustomView(R.layout.search);
-	
+
 		//get Text from Edittext Search
 		btHelp1=(Button)findViewById(R.id.btHelp1);
 		btHelp1.setOnClickListener(new OnClickListener() {
@@ -318,8 +325,8 @@ public class MainActivity2 extends Activity {
 						dialog.cancel();
 					}
 				});
-				
-				
+
+
 				// là row_search với arraylist là temp vừa lấy được
 				switch (c) {
 				case IMPORTANT:
@@ -354,7 +361,7 @@ public class MainActivity2 extends Activity {
 					break;
 				}
 				}
-				
+
 				alertDialog.show();			
 			}
 		});
@@ -388,7 +395,7 @@ public class MainActivity2 extends Activity {
 					listView.setAdapter(new Search_Adapter(MainActivity2.this,R.layout.row_search,temp));
 				}
 				else if(c==LIST3000 || c==LEARN){
-					
+
 					ArrayList<Wordp> temp=new ArrayList<Wordp>();
 					int textlength = etSearch.getText().length();
 					temp.clear();
@@ -482,7 +489,7 @@ public class MainActivity2 extends Activity {
 		});
 		btHelpAlarm1=(Button) findViewById(R.id.btHelpAlarm);
 		btHelpAlarm1.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				AlertDialog alertDialog;
@@ -500,11 +507,11 @@ public class MainActivity2 extends Activity {
 				LayoutInflater inflater = alertDialog.getLayoutInflater();
 				View dialoglayout;
 				dialoglayout=inflater.inflate(R.layout.dialog_settime,frameView);	
-				
+
 				alertDialog.show();
 			}
 		});
-		
+
 		//bt Stop
 		btstop=(Button) findViewById(R.id.btStop);
 		btstop.setOnClickListener(new OnClickListener() {
@@ -585,5 +592,18 @@ public class MainActivity2 extends Activity {
 
 			return rootView;
 		}
+	}
+
+	// for advertisements
+	@Override
+	public void onBackPressed() {
+		startAppAd.onBackPressed();
+		super.onBackPressed();
+	}
+
+	@Override
+	public void onPause() {
+		super.onPause();
+		startAppAd.onPause();
 	}
 }
