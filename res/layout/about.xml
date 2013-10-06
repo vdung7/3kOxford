@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFBE"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#00FF00"
+        android:gravity="center"
+        android:text="@string/name"
+        android:textSize="20sp"
+        android:textStyle="bold|italic" />
+<TextView
+        android:id="@+id/kc"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/kc2"
+        android:textStyle="bold|italic" />
+    <TextView
+        android:id="@+id/lv"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/lv"
+        android:textSize="20sp"
+        android:textStyle="bold|italic" />
+<TextView
+        android:id="@+id/kc2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/kc2"
+        android:textStyle="bold|italic" />
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/info"
+        android:textSize="20sp"
+        android:textStyle="bold|italic" />
+<TextView
+        android:id="@+id/kc3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/kc2"
+        android:textStyle="bold|italic" />
+    <TextView
+        android:id="@+id/thanks"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/thanks"
+        android:textSize="20sp"
+        android:textStyle="bold|italic" />
+<TextView
+        android:id="@+id/kc4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/kc1"
+        android:textStyle="bold|italic" />
+    <TextView
+        android:id="@+id/pv"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/pvn"
+        android:textSize="20sp"
+        android:textStyle="bold|italic" />
+
+</LinearLayout>

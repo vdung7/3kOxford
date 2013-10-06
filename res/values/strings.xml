@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	    <string-array name="planets_array">
+        <item>3000 Từ Oxford</item>
+        <item>Từ Quan Trọng</item>
+        <item>Chọn Từ Để Học</item>
+        <item>Thiết Lập Thời Gian</item>
+        <item>Động Từ Bất Qui Tắc</item>
+        <item>Thông Tin</item>
+    </string-array>
+    <string name="name">3000 Từ Tiếng Anh Thông Dụng</string>
+    <string name="lv">English 1.0</string>
+    <string name="info">Mọi thắc mắc vui lòng liên hệ về email namcpf@gmail.com</string>
+    <string name="thanks">Chân thành cám ơn !</string>
+    <string name="kc1">======================</string>
+    <string name="kc2">*****</string>
+    <string name="pvn">Phạm Văn Năm\n Vũ Viết Dũng</string>
+    <string name="app_name">3000 từ Tiếng Anh</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+	 <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="action_websearch">Web search</string>
+    <string name="search">Search</string>
+    <string name="helpsearch">Gỏ từ cần tìm vào ô nhập liệu ở trên góc phải để Search</string>
+    <string name="helpmenu">Lướt tay trên màn hình từ trái sang phải để xem Menu</string>
+    <string name="helptick">Tick vào những từ bạn muốn chọn để học trong ngày</string>    
+    <string name="helpinteval">Nhập vào thời gian khoảng cách giữa các lần nhắc nhở.\nVới thời gian tính bằng Phút.\nStart: Bấm nút Start để bắt đầu quá trình nhắc nhở.\nStop: Bấm nút Stop để tạm dừng qúa trình nhắc nhở.</string>    
+    <string name="app_not_available">Sorry, there\'s no web browser available</string>
+</resources>

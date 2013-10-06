@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    
+<TextView
+    android:id="@+id/tvWordshow"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#00FF86"
+    android:gravity="center"
+    android:text="@string/hello_world"
+    android:textSize="20sp"
+    android:textStyle="bold|italic" />
+
+<TextView
+    android:id="@+id/tvshowSound"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:text="sound"
+    android:textColor="#000065"
+    android:textSize="20sp"
+    android:textStyle="italic" />
+
+<TableRow
+    android:id="@+id/tableRow1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/sound_48" />
+
+    <ImageView
+        android:id="@+id/btHotw"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:clickable="true" />
+</TableRow>
+
+<ListView
+    android:id="@+id/lvShowmean"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+</ListView>
+
+</LinearLayout>
+    

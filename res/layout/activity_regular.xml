@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <!-- TextView and Button Infinitive -->
+    <TextView
+        android:id="@+id/tInfi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/bInfi"
+        android:text="Infinitive"
+        android:textStyle="italic"
+        android:textColor="#3D3D3D"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/bInfi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/tInfi"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="24dp"
+        android:background="@drawable/volume_on" />
+	<!-- TextView and Button Simple -->
+    <TextView
+        android:id="@+id/tSimple"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/bSimple"
+        android:layout_below="@id/tInfi"
+        android:text="Simple"
+        android:textStyle="italic"
+        android:textColor="#009900"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/bSimple"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/tSimple"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="24dp"
+        android:layout_below="@id/bInfi"
+        android:background="@drawable/volume_on" />
+    <!-- TextView and Button Past-->
+    <TextView
+        android:id="@+id/tPast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/bPast"
+        android:layout_below="@id/tSimple"
+        android:text="Past"
+        android:textStyle="italic"
+        android:textColor="#4D00FF"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/bPast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/tPast"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="24dp"
+        android:layout_below="@id/bSimple"
+        android:background="@drawable/volume_on" />
+     <!-- TextView and Button Example-->
+    <TextView
+        android:id="@+id/tExample"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/bExample"
+        android:layout_below="@id/tPast"
+        android:text="Example"
+        android:textStyle="italic"
+        android:textColor="#FF0000"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/bExample"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/tExample"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="24dp"
+        android:layout_below="@id/bPast"
+        android:background="@drawable/volume_on" />
+     <!-- TextView Mean-->
+    <TextView
+        android:id="@+id/tMean"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/tExample"
+        android:text="Mean"
+        android:textStyle="italic"
+        android:textColor="#3D3D3D"
+        android:textSize="20sp" />
+    
+</RelativeLayout>

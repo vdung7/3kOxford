@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="NewApi">
+        <ignore path="src/com/english_1_3/MainActivity2.java" />
+    </issue>
+    <issue id="ShowToast">
+        <ignore path="src/com/english_1_3/Onday_Activity.java" />
+    </issue>
+    <issue id="SuspiciousImport" severity="ignore" />
+</lint>
